@@ -1,0 +1,23 @@
+[project]
+name = "hangul-doctor"
+version = "0.1.0"
+description = "Diagnose Korean / CJK problems in coding-agent workspaces"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["korean", "hangul", "cjk", "claude-code", "encoding", "diagnostics"]
+dependencies = []
+
+[project.scripts]
+hangul-doctor = "hangul_doctor.cli:main"
+hgdoc = "hangul_doctor.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["hangul_doctor"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"issues.json" = "issues.json"
